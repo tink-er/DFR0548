@@ -177,7 +177,7 @@ namespace motor {
     //% weight=100
     //% value.min=0 value.max=4095
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=4
-    export function servo(index: Servos, value: number): void {
+    export function servo_raw(index: Servos, value: number): void {
         if (!initialized) {
             initPCA9685()
         }
