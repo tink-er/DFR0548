@@ -170,6 +170,27 @@ namespace motor {
     }
 
     /**
+     * Steering raw gear control function.
+     * S1~S8.
+	*/
+    //% blockId=motor_servo_raw block="Servo|%index|value|%value"
+    //% weight=100
+    //% value.min=0 value.max=4095
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=4
+    export function servo(index: Servos, value: number): void {
+        if (!initialized) {
+            initPCA9685()
+        }
+        // 100hz
+        setPwm(index + 7, 0, value)
+    }
+
+
+	
+	
+	
+	
+	/**
 	 * Execute a motor
      * M1~M4.
      * speed(0~255).
